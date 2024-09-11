@@ -1,0 +1,253 @@
+/*  Alumno: Leonardo Daniel Aviña Neri 4PRAM */
+
+*{
+    box-sizing: border-box;
+    color: white;
+    margin: 0;
+    font-family: 'Sansita', sans-serif;
+    /* border: 2px solid white; */
+}
+
+main{
+    margin-top: 100px;
+    padding: 10px;
+}
+
+:root{
+    --colorPrincipal: tomato;
+}
+
+::first-letter{
+    text-transform: capitalize;
+
+}
+
+body{
+    background-position: center;
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,45,152,1) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    
+    display: grid;
+    min-height: 100vh; /*sin este no funciona todo esto*/
+    grid-template-rows: auto 1fr auto;
+
+}
+
+.title{
+    font-family: 'Alkatra', cursive;
+    font-size: 3em;
+    text-shadow: 0 0 8px gold;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    border-bottom: 4px solid #7e7e7e;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+.header__menu, .header__social-media, .menu__list{
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.header__menu {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.menu__list{
+    width: 50%;
+    justify-content: space-between;
+    font-size: 1.4em;
+}
+
+.header__social-media{
+    flex-direction: column;
+    justify-content: end;
+}
+
+.menu__item:hover, .curse-link:hover, .title-curse:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.menu__link{
+    text-decoration: none;
+}
+
+.section{
+    width: 60%;
+    margin: 10px auto;
+}
+.section, .curses__curse{
+    background-color: #eee;
+    border-radius: .5em;
+    padding:47px 4px; 
+    border: 3px solid #29292986;
+}
+
+
+.section__text, .section__title, .curses__title{
+    color: #000;
+    text-align: center;
+}
+
+.section__title{
+    margin-bottom: 10px ;
+}
+
+
+.curse-link, .title-curse{
+    color: #555;
+    text-decoration: none;
+    font-size: x-large;
+}
+.title-curse{
+    font-weight: bold;
+}
+.curses-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 4px;
+
+    grid-template-areas: 
+    ". . . ."
+    ". . . aside"
+    ". . . aside"
+    ". . . .";
+
+}
+
+.curses__aside{
+    grid-area: aside;
+    background-color: rgba(222, 184, 135, 0.523);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-areas: 
+    "french carro"
+    "french ropa";
+    
+}
+
+.aside-picture{
+    width: 100%;
+}
+
+
+
+.curses__title, .section__title{
+    grid-column: 1/ -1;
+    align-self: center;
+    font-size: 2.5em;
+}
+
+.curses__curse{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+
+.curse-logo{
+    width: 100px;
+}
+
+
+.footer{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    
+    background: linear-gradient(90deg, rgba(98,29,253,1) 32%, rgba(221,69,252,1) 92%);
+    border-top: 3px solid #555;
+    align-items: center;
+}
+
+.footer__text{
+    font-size: 1.3em;
+}
+
+@media(max-width:445px){
+    .header__menu, .header__social-media, .menu__list{
+        display: flex;
+        flex-direction: column;
+    }
+    main{
+        margin-top: 150px;
+    }
+
+    .curses-container{
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(6,1fr);
+    }
+
+}
+
+@media (max-width:320px){
+    .curses-container{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(6,1fr);
+    }
+}
+
+@media(max-width:650px){
+   
+    .header{
+        display: flex;
+        justify-content: end;
+    } 
+    .header__menu{
+        width: 100%;
+    }
+    .header__social-media{
+        display: none;
+    }   
+}
+
+@media(max-width:540px){
+    .menu__list{
+        display: flex;
+        flex-direction: column;
+    }
+
+    main{
+        margin-top: 150px;
+    }
+    
+    .header__menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+.header__logo{
+    width: 40px;
+}
+
+/* 
+Tema Libre:
+
+1.   Header  3 elementos  (menu, Texto, Nav)
+2.-  menu : 4 elementos
+3.-  2 secciones ( con 3 articulos )
+4.  Aside. (3 elementos )
+5.- Footer ( 2 elementos,   uno de ellos su nombre)
+
+*/
